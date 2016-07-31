@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+  <title>Dating site</title>
+  <style>
+  .txtarea{
+    width:360px;
+    height:50px
+
+  }
+
+fieldset {background:lightyellow;
+            border:10px solid yellow;
+            margin-bottom:10px;
+            width:720px}
+
+label {width:180px;
+      display:inline-block;
+      text-align: right;
+      text-align: top;
+                    }
+
+
+  .range{
+               text-align:center;
+               width:45px;
+               color: white;
+               background-color: red;
+            }
+
+.range1{
+          text-align:center;
+          width:45px;
+          color: white;
+          background-color: purple;
+                      }
+
+
+                      }
+
+
+
+  </style>
+</head>
+<body>
+  <h1>Please Enter Your Details For Our Dating Website!</h1>
+  <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Your face</legend>
+      <label for="avatar">Your image:</label> <input type="file" id="avatar" name="avatar" required><br>
+
+      <label for="preview">Image preview:</label> <img id="preview">
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Your general details</legend>
+          <label for="name">Name:</label> <input type="text" name="name" required><br>
+          <label for="gender">Gender:</label><input type="radio" name="gender" required> Male <input type="radio" name="gender"> Female <br>
+          <label for="age">Age:</label> <input type="number" name="age" required><br>
+          <label for="date">Date of birth:</label> <input type="date" > <br>
+          <label for="color">Favorite color:</label> <input type="color"> <br>
+          <label for="country">Which country:</label> <select name="countries">
+                            <option value="noselection"></option>
+                            <option value="ro">Romania</option>
+                            <option value="hu">Hungary</option>
+                            <option value="bl">Bulgaria</option>
+                            <option value="sb">Serbia</option>
+                            <option value="Ml">Moldavia</option>
+
+                          </select>
+    </fieldset>
+
+    <fieldset>
+            <legend>Your indicators</legend>
+              <label for="height">Height:</label><label for="short" class="range">Short</label><input type="range" min="0" max="100" step="5" value="50" id="height"><label for="tall" class="range1">Tall</label><br>
+              <label for="salary">Salary:</label><label for="poor" class="range">Poor</label><input type="range" min="0" max="100" step="5" value="50" id="salary" ><label for="rich" class="range1">Rich</label><br>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Your contact information</legend>
+        <label for="email">Email:</label><input type="email" id="email" required><br>
+        <label for="mobile">Mobile:</label><input type="tel" id="mobile" ><br>
+        <label for="address">Address:</label><textarea rows="2" cols="30" name="address" class="txtarea"> </textarea><br>
+        <label for="contact">Method to contact you:</label> <input type="checkbox" name="items" value="email" > Email
+                                <input type="checkbox" name="items" value="whatsapp" > Whatsapp
+                                 <input type="checkbox" name="items" value="inapp"> In-app chat
+      </fieldset>
+     <input type="submit">
+
+  </form>
+</body>
+</html>

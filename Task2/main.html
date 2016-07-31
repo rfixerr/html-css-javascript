@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guessing colors game</title>
+</head>
+   <body onload="do_game()">
+     <script language="JavaScript">
+     var target;
+     var guess_input_text;
+     var finished = false;
+     var guesses = 0;
+     colors=["azure", "cadetblue", "darkorchid", "dimgray","firebrick", "greenyellow", "midnightblue", "olive", "plum", "snow", "wheat"];
+
+     function  do_game(){
+       var target = colors[Math.floor(Math.random() * colors.length)];
+       alert(target);
+       while(!finished){
+           guess_input_text=prompt("I am thinking of one of these colors \n \n" + colors.join(', ') + "\n\n What color am I thinking of?");
+           guesses += 1;
+           if(guess_input_text==target){
+                alert("Congratulations! You have guessed the color! \n It took you " + guesses + " to finish the game!");}
+          else {
+                alert("Sorry, that's not the correct color. \n Please try again.");
+          }
+                }
+
+
+       }
+
+
+     </script>
+   </body>
+
+
+
+</html>
