@@ -22,25 +22,63 @@
 
   var numberOfFaces = 5;
   var theLeftSide = document.getElementById("leftSide");
+  var theRightSide = document.getElementById("rightSide");
+  var theBody = document.getElementsByTagName("body")[0];
   var i=0;
   function generateFaces(){
   while(i<numberOfFaces){
     //var newItem = document.createElement("<img src="C:\Users\Moho\Desktop\html-css-javascript\Task3\smile.png"></img>");
-    var newItem = document.createElement("img");
-    newItem.src = 'https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png';
+    var image = document.createElement("img");
+    image.src = 'https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png';
     var width =  document.getElementById('leftSide').offsetWidth -100;
 
     //newItem.setAttribute('src', 'C:\Users\Moho\Desktop\html-css-javascript\Task3\smile.png');
-    newItem.setAttribute('alt', 'na');
-    newItem.style.top = Math.floor((Math.random() * width) +1) +"px";
-    newItem.style.left = Math.floor((Math.random() * width) +100)+"px";
+    image.setAttribute('alt', 'na');
+    image.style.top = Math.floor((Math.random() * width) +1) +"px";
+    image.style.left = Math.floor((Math.random() * width) +100)+"px";
     destParent = document.getElementById("leftSide");
-    destParent.appendChild(newItem);
+    destParent.appendChild(image);
+
+
 
 
     i+=1;
   }
+var leftSideImages = theLeftSide.cloneNode(true);
+
+theLeftSide.lastChild.onclick=
+    function nextLevel(event){
+
+        event.stopPropagation();
+
+        numberOfFaces += 5;
+
+        generateFaces();
+
+
+};
+leftSideImages.removeChild(leftSideImages.lastChild);
+theRightSide.appendChild(leftSideImages);
+
+theBody.onclick = function gameOver() {
+
+    alert("Game Over!");
+
+
+
+    theBody.onclick = null;
+
+    theLeftSide.lastChild.onclick = null;
+
+
+};
+
+
+
 }
+
+
+
 
 
     </script>
